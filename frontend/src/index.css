@@ -1,0 +1,297 @@
+:root{
+    --bg:#0b1220;
+    --card:#111827;
+    --card2:#1f2937;
+    --border:#263244;
+    --text:#ffffff;
+    --text2:#9ca3af;
+    --green:#00ff99;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Segoe UI",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+}
+
+#root{
+    min-height:100vh;
+}
+
+/* ================= SIDEBAR ================= */
+
+.sidebar{
+    position:fixed;
+    left:0;
+    top:0;
+    width:240px;
+    height:100vh;
+    background:var(--card);
+    border-right:1px solid var(--border);
+    padding:30px 20px;
+}
+
+.logo{
+    text-align:center;
+    color:var(--green);
+    margin-bottom:40px;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    margin-bottom:10px;
+}
+
+.sidebar li a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:15px;
+    text-decoration:none;
+    color:white;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.sidebar li a:hover{
+    background:var(--card2);
+}
+
+.sidebar li.active a{
+    background:var(--green);
+    color:#0b1220;
+    font-weight:600;
+}
+
+/* ================= DASHBOARD ================= */
+
+.dashboard-content{
+    margin-left:240px;
+    padding:30px;
+    min-height:100vh;
+}
+
+.dashboard-title{
+    text-align:left;
+    font-size:32px;
+    margin:20px 0;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:var(--card);
+    padding:18px 25px;
+    border-radius:15px;
+    margin-bottom:25px;
+}
+
+.navbar h2{
+    margin-bottom:5px;
+}
+
+.navbar p{
+    color:var(--text2);
+    font-size:14px;
+}
+
+.navbar-right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.status{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:var(--green);
+    font-weight:600;
+}
+
+.profile img{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+    border:2px solid var(--green);
+}
+
+/* ================= CARDS ================= */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+}
+
+.stat-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:25px;
+    transition:.3s;
+}
+
+.stat-card:hover{
+    transform:translateY(-5px);
+}
+
+.stat-card h3{
+    color:var(--text2);
+    margin-bottom:15px;
+}
+
+.stat-card h2{
+    color:var(--green);
+    font-size:36px;
+}
+
+/* ================= PANELS ================= */
+
+.system-info,
+.threat-status,
+.recommendations,
+.network-table{
+    margin-top:30px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:15px;
+    padding:25px;
+}
+
+.system-info h2,
+.threat-status h2,
+.recommendations h2{
+    margin-bottom:20px;
+}
+
+/* ================= SYSTEM INFO ================= */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.info-item{
+    background:var(--bg);
+    padding:18px;
+    border-radius:10px;
+}
+
+.info-item span{
+    display:block;
+    color:var(--text2);
+    margin-bottom:8px;
+}
+
+.info-item strong{
+    color:white;
+}
+
+/* ================= THREAT ================= */
+
+.threat-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.threat-item{
+    background:var(--bg);
+    padding:20px;
+    border-radius:10px;
+}
+
+.threat-item span{
+    display:block;
+    color:var(--text2);
+    margin-bottom:8px;
+}
+
+.threat-item strong{
+    color:var(--green);
+    font-size:18px;
+}
+
+/* ================= RECOMMENDATIONS ================= */
+
+.recommendations ul{
+    padding-left:20px;
+}
+
+.recommendations li{
+    margin-bottom:10px;
+    color:#d1d5db;
+}
+
+.recommendations p{
+    color:var(--text2);
+}
+
+/* ================= NETWORK ================= */
+
+.network-table{
+    overflow-x:auto;
+}
+
+.network-table table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+.network-table th{
+    background:var(--card2);
+    padding:15px;
+    text-align:left;
+}
+
+.network-table td{
+    padding:15px;
+    border-bottom:1px solid var(--border);
+    color:#d1d5db;
+}
+
+.network-table tr:hover{
+    background:#182233;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    .sidebar{
+        width:70px;
+    }
+
+    .sidebar span,
+    .logo{
+        display:none;
+    }
+
+    .dashboard-content{
+        margin-left:70px;
+    }
+
+    .info-grid,
+    .threat-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cards{
+        grid-template-columns:1fr;
+    }
+
+}
