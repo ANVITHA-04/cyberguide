@@ -62,3 +62,5 @@ SQLite Database
 • Malware Detection
 • Cloud Deployment
 • SIEM Integration
+## Project Status
+Development version.
